@@ -6,13 +6,13 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 15:13:16 by faeljedd          #+#    #+#             */
-/*   Updated: 2025/10/28 18:36:00 by faeljedd         ###   ########.fr       */
+/*   Updated: 2025/11/02 20:42:43 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	is_overflow(int sign)
+static int	is_overflow(int sign)
 {
 	if (sign < 0)
 		return (0);

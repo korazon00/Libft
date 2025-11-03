@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/16 20:08:11 by faeljedd          #+#    #+#             */
-/*   Updated: 2025/11/03 11:36:56 by faeljedd         ###   ########.fr       */
+/*   Created: 2025/11/01 09:53:23 by faeljedd          #+#    #+#             */
+/*   Updated: 2025/11/01 11:21:52 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	ft_memset(s, 0, n);
+	t_list	*node;
+
+	if (!lst || !del)
+		return ;
+	node = *lst;
+	while (*lst != NULL)
+	{
+		*lst = node->next;
+		del(node->content);
+		free (node);
+		node = *lst;
+	}
+	*lst = NULL;
 }
