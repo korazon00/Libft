@@ -6,7 +6,7 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 11:58:41 by faeljedd          #+#    #+#             */
-/*   Updated: 2025/10/24 17:52:00 by faeljedd         ###   ########.fr       */
+/*   Updated: 2025/11/05 18:29:53 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		str[i] = s1[i];
 		i++;
 	}
+	str[i] = '\0';
 	ft_strlcat (str, s2, s1_len + s2_len + 1);
 	return (str);
 }

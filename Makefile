@@ -20,10 +20,10 @@ BONUS_OBJ = $(BONUS:%.c=%.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rc $(NAME) $(OBJ)
+	ar r $(NAME) $(OBJ)
 
-bonus: $(BONUS_OBJ) $(OBJ)
-	ar rc $(NAME) $(BONUS_OBJ) $(OBJ)
+bonus: $(BONUS_OBJ)
+	ar r $(NAME) $(BONUS_OBJ)
 
 %.o: %.c libft.h
 	$(CC) $(CFLAGS)	-c	$<	-o	$@
